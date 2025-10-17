@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lalafo Ads</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; padding: 20px; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); overflow: hidden; }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-content { padding: 10px; }
+        .title { font-size: 16px; font-weight: bold; margin: 5px 0; }
+        .price { color: green; font-weight: bold; }
+        .city, .date { font-size: 13px; color: #666; }
+    </style>
+</head>
+<body>
+<h1 style="text-align:center;">🔥 100 актуальных объявлений с Lalafo.kg</h1>
+<div class="grid">
+    <div th:each="ad : ${ads}" class="card">
+        <img th:src="${ad.imageUrl}" alt="photo">
+        <div class="card-content">
+            <div class="title" th:text="${ad.title}"></div>
+            <div class="price" th:text="${ad.price}"></div>
+            <div class="city" th:text="${ad.city}"></div>
+            <div class="date" th:text="${ad.date}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
