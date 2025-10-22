@@ -12,17 +12,17 @@ import java.util.List;
 @Service
 public class LalafoServiceImpl implements LalafoService {
 
-    private final AdRepo adRepo;
-    private final AdMapper adMapper;
+    private final AdRepo productRepo;
+    private final AdMapper productMapper;
 
-    public LalafoServiceImpl(AdRepo adRepo) {
-        this.adRepo = adRepo;
-        this.adMapper = AdMapper.INSTANCE;
+    public LalafoServiceImpl(AdRepo productRepo) {
+        this.productRepo = productRepo;
+        this.productMapper = AdMapper.INSTANCE;
     }
 
     @Override
-    public List<Ad> getProducts() {
-        List<AdApiDto> apiProducts = adRepo.fetchProducts();
-        return adMapper.toProductList(apiProducts);
+    public List<Ad> getAds() {
+        List<AdApiDto> apiProducts = productRepo.fetchProducts();
+        return productMapper.toProductList(apiProducts);
     }
 }

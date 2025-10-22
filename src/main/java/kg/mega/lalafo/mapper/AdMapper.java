@@ -1,12 +1,13 @@
 package kg.mega.lalafo.mapper;
 
+
 import kg.mega.lalafo.model.Ad;
 import kg.mega.lalafo.model.dto.AdApiDto;
 import kg.mega.lalafo.model.dto.AdImageDto;
+
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
-import org.mapstruct.factory.Mappers;
 import org.mapstruct.factory.Mappers;
 
 import java.time.Instant;

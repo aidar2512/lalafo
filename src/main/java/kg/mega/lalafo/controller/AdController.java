@@ -18,9 +18,10 @@ public class AdController {
     }
 
     @GetMapping("/test-result")
-    public String getProducts(Model model) {
-        List<Ad> products = service.getProducts();
-        model.addAttribute("products", products);
-        return "products";
+    public String getAds(Model model) {
+        List<Ad> ads = service.getAds();
+        model.addAttribute("products", ads); // ✅ совпадает с шаблоном
+        return "index";
     }
+
 }
